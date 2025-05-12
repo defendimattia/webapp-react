@@ -16,7 +16,7 @@ export default function Homepage() {
             <h1>Homepage</h1>
             <h2>Lista film</h2>
             <ul>
-                {movies.map(movie => <li>{movie.title}</li>)}
+                {movies.map(movie => <li key={movie.id}>{movie.title}</li>)}
             </ul>
         </>
     )
