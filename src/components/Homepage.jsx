@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
+import MovieCard from "./MovieCard"
 
 export default function Homepage() {
 
@@ -15,9 +16,12 @@ export default function Homepage() {
         <>
             <h1>Homepage</h1>
             <h2>Lista film</h2>
-            <ul>
-                {movies.map(movie => <li key={movie.id}>{movie.title}</li>)}
-            </ul>
+            <div className="container">
+                <ul className="d-flex row gap-5 list-unstyled">
+                    {movies.map(movie => <li key={movie.id} className="col-lg-3"><MovieCard /></li>)}
+                </ul>
+            </div>
+
         </>
     )
 }
