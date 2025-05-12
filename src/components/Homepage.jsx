@@ -17,9 +17,13 @@ export default function Homepage() {
             <h1>Homepage</h1>
             <h2>Lista film</h2>
             <div className="container">
-                <ul className="d-flex row gap-5 list-unstyled">
-                    {movies.map(movie => <li key={movie.id} className="col-lg-3"><MovieCard /></li>)}
-                </ul>
+                <div className="row g-4">
+                    {movies.map(movie => (
+                        <div key={movie.id} className="col-lg-3">
+                            <MovieCard movie={movie} />
+                        </div>
+                    ))}
+                </div>
             </div>
 
         </>
