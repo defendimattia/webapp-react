@@ -7,7 +7,7 @@ export default function Homepage() {
     const [movies, setMovies] = useState([])
 
     useEffect(() => {
-        axios.get("http://127.0.0.1:3000/api/movies")
+        axios.get(import.meta.env.VITE_API_BASE_URL + "/api/movies")
             .then((res) => setMovies(res.data))
     }, [])
 
