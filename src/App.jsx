@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Homepage from "./components/Homepage"
-import Book from "./components/Book"
+import Movies from "./components/Movies"
 
 function App() {
 
@@ -9,7 +9,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/:id" element={<Book />} />
+          <Route path="/:id" element={<Movies />} />
         </Routes>
       </BrowserRouter>
     </>
