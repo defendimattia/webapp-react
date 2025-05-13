@@ -9,6 +9,7 @@ export default function Homepage() {
     useEffect(() => {
         axios.get(import.meta.env.VITE_API_BASE_URL + "/api/movies")
             .then((res) => setMovies(res.data))
+            .catch(err => console.log(err))
     }, [])
 
 
