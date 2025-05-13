@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import axios from "axios"
 
 
-export default function ReviewCard() {
+export default function MovieDetail() {
 
     const { id } = useParams()
 

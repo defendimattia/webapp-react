@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Homepage from "./components/Homepage"
-import ReviewCard from "./components/ReviewCard"
+import MovieDetails from "./components/MovieDetails"
 import MainLayout from "./layouts/MainLayout"
 import { useEffect, useState } from "react"
 import axios from "axios"
@@ -21,7 +21,7 @@ function App() {
         <Routes>
           <Route path="/" Component={MainLayout}>
             <Route index element={<Homepage movies={movies} />} />
-            <Route path="/:id" element={<ReviewCard/>} />
+            <Route path="/:id" element={<MovieDetails/>} />
           </Route>
 
         </Routes>
