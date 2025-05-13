@@ -1,10 +1,30 @@
+import { useParams } from "react-router"
+import { useEffect, useState } from "react"
+import axios from "axios"
+
+
 export default function ReviewCard() {
+
+    const { id } = useParams()
+
+    const [movie, setMovie] = useState([])
+
+    useEffect(() => {
+        axios.get(import.meta.env.VITE_API_BASE_URL + "/api/movies/" + id)
+            .then((res) => setMovie(res.data))
+            .catch(err => console.log(err))
+    }, [id])
+
     return (
         <>
             <div className="container">
 
-                <h1>Specifiche Film</h1>
-                <h2></h2>
+                <img src={import.meta.env.VITE_API_BASE_URL + "/movies/" + movie.image} className="card-img-top" alt={movie.title} />
+                <h1>{movie.title}</h1>
+                <h4>{`Director: ${movie.director}`}</h4>
+                <h4>{`Genre: ${movie.genre}`}</h4>
+                <h4>{`Release Year: ${movie.release_year}`}</h4>
+                <p>{`Abstract: ${movie.abstract}`}</p>
 
             </div>
 
