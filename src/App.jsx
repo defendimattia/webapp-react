@@ -9,7 +9,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<MainLayout />}>
+          <Route path="/" Component={MainLayout}>
             <Route index element={<Homepage />} />
             <Route path="/:id" element={<Movies />} />
           </Route>
