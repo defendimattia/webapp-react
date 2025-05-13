@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function MovieCard({ movie }) {
     return (
         <>
@@ -7,7 +9,7 @@ export default function MovieCard({ movie }) {
                 <div className="card-body">
                     <h5 className="card-title">{movie.title}</h5>
                     <p className="card-text">{movie.abstract}</p>
-                    <a href="#" className="btn btn-primary">Dettagli</a>
+                    <Link to={import.meta.env.VITE_URL + `/${movie.id}`} className="btn btn-primary">Dettagli</Link>
                 </div>
             </div>
 

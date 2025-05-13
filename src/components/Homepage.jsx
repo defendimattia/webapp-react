@@ -1,26 +1,18 @@
-import { useEffect, useState } from "react"
-import axios from "axios"
 import MovieCard from "./MovieCard"
 
-export default function Homepage() {
+export default function Homepage({ movies }) {
 
-    const [movies, setMovies] = useState([])
 
-    useEffect(() => {
-        axios.get(import.meta.env.VITE_API_BASE_URL + "/api/movies")
-            .then((res) => setMovies(res.data))
-            .catch(err => console.log(err))
-    }, [])
 
 
     return (
         <>
             <div className="container">
 
-                
+
                 <h1>Homepage</h1>
                 <h2>Lista film</h2>
-                <div className="container my-5">
+                <div className="container">
                     <div className="row g-4">
                         {movies.map(movie => (
                             <div key={movie.id} className="col-lg-3">
