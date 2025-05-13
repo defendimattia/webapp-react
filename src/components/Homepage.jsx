@@ -15,17 +15,23 @@ export default function Homepage() {
 
     return (
         <>
-            <h1>Homepage</h1>
-            <h2>Lista film</h2>
             <div className="container">
-                <div className="row g-4">
-                    {movies.map(movie => (
-                        <div key={movie.id} className="col-lg-3">
-                            <MovieCard movie={movie} />
-                        </div>
-                    ))}
+
+                
+                <h1>Homepage</h1>
+                <h2>Lista film</h2>
+                <div className="container my-5">
+                    <div className="row g-4">
+                        {movies.map(movie => (
+                            <div key={movie.id} className="col-lg-3">
+                                <MovieCard movie={movie} />
+                            </div>
+                        ))}
+                    </div>
                 </div>
+
             </div>
+
 
         </>
     )
