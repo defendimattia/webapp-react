@@ -30,11 +30,14 @@ export default function MovieDetail() {
 
                 <hr />
                 <h4>Recensioni</h4>
-                {movie.reviews?.map(review => <ReviewCard review={review}/>)}
-                
+                {movie.reviews?.map(review => <ReviewCard review={review} />)}
+
                 <hr />
-                <h4>Aggiungi recensione</h4>
-                <ReviewForm />
+
+                <div className="my-3">
+                    <h4>Aggiungi recensione</h4>
+                    <ReviewForm />
+                </div>
 
             </div>
 
