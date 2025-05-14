@@ -1,29 +1,39 @@
+import { useState } from "react"
+
 export default function ReviewForm() {
+
+    const [data, setData] = useState({
+
+        name: "",
+        vote: 1,
+        text: ""
+
+    })
 
     return (
         <>
             <form action="">
-                <div class="card">
-                    <div class="card-header">
+                <div className="card">
+                    <div className="card-header">
                         Aggiungi recensione
                     </div>
-                    <div class="card-body">
-                        <label for="formName" className="form-label">Nome</label>
-                        <input type="text" className="form-control" id="formName" placeholder="Inserisci il tuo nome" />
+                    <div className="card-body">
+                        <label htmlFor="formName" className="form-label">Nome</label>
+                        <input type="text" className="form-control" id="formName" placeholder="Inserisci il tuo nome" value={data.name} onChange={(e) => setData({ ...data, name: e.target.value })} />
                     </div>
 
-                    <div class="card-body">
-                        <label for="formVote" className="form-label">Voto</label>
-                        <input type="number" className="form-control" id="formVote" min="1" max="5" />
+                    <div className="card-body">
+                        <label htmlFor="formVote" className="form-label">Voto</label>
+                        <input type="number" className="form-control" id="formVote" min="1" max="5" value={data.vote} onChange={(e) => setData({ ...data, vote: e.target.value })} />
                     </div>
 
-                    <div class="card-body">
-                        <label for="textForm" className="form-label">Testo</label>
-                        <textarea class="form-control" id="textForm" rows="3"></textarea>
+                    <div className="card-body">
+                        <label htmlFor="textForm" className="form-label">Testo</label>
+                        <textarea className="form-control" id="textForm" rows="3" placeholder="Inserisci testo" value={data.text} onChange={(e) => setData({ ...data, text: e.target.value })}></textarea>
                     </div>
 
-                    <div class="card-body">
-                        <a href="#" class="btn btn-primary">Aggiungi</a>
+                    <div className="card-body">
+                        <a href="#" className="btn btn-primary">Aggiungi</a>
                     </div>
                 </div >
             </form>

@@ -30,7 +30,7 @@ export default function MovieDetail() {
 
                 <hr />
                 <h4>Recensioni</h4>
-                {movie.reviews?.map(review => <ReviewCard review={review} />)}
+                {movie.reviews?.map(review => <ReviewCard review={review} key={review.id}/>)}
 
                 <hr />
 
