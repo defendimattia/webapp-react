@@ -1,6 +1,8 @@
+import axios from "axios"
 import { useState } from "react"
 
-export default function ReviewForm() {
+
+export default function ReviewForm({ movieID }) {
 
     const [data, setData] = useState({
 
@@ -10,10 +12,15 @@ export default function ReviewForm() {
 
     })
 
+
     function submitData(event) {
-        
         event.preventDefault()
 
+
+
+
+        axios.post(import.meta.env.VITE_API_BASE_URL + `/api/movies/${movieID}/reviews`, data)
+            .catch(err => console.log(err))
 
     }
 

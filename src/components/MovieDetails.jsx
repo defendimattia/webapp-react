@@ -36,7 +36,7 @@ export default function MovieDetail() {
 
                 <div className="my-3">
                     <h4>Aggiungi recensione</h4>
-                    <ReviewForm />
+                    <ReviewForm movieID={movie.id}/>
                 </div>
 
             </div>
