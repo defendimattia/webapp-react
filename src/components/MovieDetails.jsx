@@ -2,6 +2,7 @@ import { useParams } from "react-router"
 import { useEffect, useState } from "react"
 import axios from "axios"
 import ReviewCard from "./ReviewCard"
+import ReviewForm from "./ReviewForm"
 
 
 export default function MovieDetail() {
@@ -28,8 +29,12 @@ export default function MovieDetail() {
                 <p>{`Estratto: ${movie.abstract}`}</p>
 
                 <hr />
-                <h4>Recensioni:</h4>
+                <h4>Recensioni</h4>
                 {movie.reviews?.map(review => <ReviewCard review={review}/>)}
+                
+                <hr />
+                <h4>Aggiungi recensione</h4>
+                <ReviewForm />
 
             </div>
 
