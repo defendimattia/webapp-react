@@ -10,12 +10,17 @@ export default function MovieDetail() {
     const { id } = useParams()
 
     const [movie, setMovie] = useState([])
+    
+    function getMovie() {
 
-    useEffect(() => {
         axios.get(import.meta.env.VITE_API_BASE_URL + "/api/movies/" + id)
             .then((res) => setMovie(res.data))
             .catch(err => console.log(err))
-    }, [id])
+
+
+    }
+    useEffect(() => getMovie, [id])
+
 
     return (
         <>
@@ -36,7 +41,7 @@ export default function MovieDetail() {
 
                 <div className="my-3">
                     <h4>Aggiungi recensione</h4>
-                    <ReviewForm movieID={movie.id}/>
+                    <ReviewForm movieID={movie.id} refresh={getMovie}/>
                 </div>
 
             </div>
