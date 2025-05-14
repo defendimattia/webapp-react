@@ -10,9 +10,16 @@ export default function ReviewForm() {
 
     })
 
+    function submitData(event) {
+        
+        event.preventDefault()
+
+
+    }
+
     return (
         <>
-            <form action="">
+            <form onSubmit={submitData}>
                 <div className="card">
                     <div className="card-header">
                         Aggiungi recensione
@@ -33,7 +40,7 @@ export default function ReviewForm() {
                     </div>
 
                     <div className="card-body">
-                        <a href="#" className="btn btn-primary">Aggiungi</a>
+                        <button type="submit" className="btn btn-primary">Aggiungi</button>
                     </div>
                 </div >
             </form>
