@@ -18,7 +18,8 @@ export default function ReviewForm({ movieID, refresh }) {
 
 
         axios.post(import.meta.env.VITE_API_BASE_URL + `/api/movies/${movieID}/reviews`, data)
-            .then(refresh)
+            .then(() => refresh())
+            .then(setData({ name: "", vote: 1, text: "" }))
             .catch(err => console.log(err))
 
     }
