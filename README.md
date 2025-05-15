@@ -61,3 +61,18 @@ Può restituire un semplice testo "Rotta per aggiungere una recensione";
 
 ### BONUS:
 Provate a creare un nuovo film con upload immagine (multer)!
+
+
+
+
+## esercizio 4
+- Concludiamo migliorando l’esperienza sulla nostra SPA, inserendo un loader.
+- Creiamo un componente loader
+- Questo componente deve poter apparire su qualunque pagina della nostra app.
+- Creiamo e sfruttiamo un Context per dare la possibilità ad ogni componente di attivare o disattivare il loader sulla propria pagina
+
+### BONUS:
+Personalizziamo l’aspetto della nostra app col CSS
+
+### BONUS BONUS:
+provate a validare i campi dei vostri form!
