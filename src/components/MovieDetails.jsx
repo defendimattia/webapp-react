@@ -3,6 +3,9 @@ import { useEffect, useState } from "react"
 import axios from "axios"
 import ReviewCard from "./ReviewCard"
 import ReviewForm from "./ReviewForm"
+import { useContext } from "react"
+import GlobalContext from "../../contexts/GlobalContext"
+import Loader from "./Loader"
 
 
 export default function MovieDetail() {
@@ -11,20 +14,28 @@ export default function MovieDetail() {
 
     const [movie, setMovie] = useState([])
 
-    function getMovie() {
+    const { isLoading, setIsLoading } = useContext(GlobalContext)
 
+    function getMovie() {
+        setIsLoading(true)
         axios.get(import.meta.env.VITE_API_BASE_URL + "/api/movies/" + id)
             .then((res) => setMovie(res.data))
             .catch(err => console.log(err))
+            .finally(() => setIsLoading(false))
 
 
     }
+    
     useEffect(() => getMovie, [id])
 
 
     return (
         <>
-            <div className="container movie-details">
+
+                
+                {isLoading && <div className="container"><Loader /></div>}
+                
+                <div className="container movie-details">
 
                 <div className="img-container">
                     <img src={import.meta.env.VITE_API_BASE_URL + "/movies/" + movie.image} className="card-img-top" alt={movie.title} />
